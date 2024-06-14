@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterBox, CtaSection, FooterColumns, FooterColumn, FooterEnd, Input, Button, FooterContainer, Rights, GitHubIcon, CTAText } from './Footer';
+import { FooterBox, CtaSection, FooterColumns, FooterColumn, FooterEnd, Input, Button, FooterContainer, Rights, GitHubIcon, CTAText } from './FooterStyles';
 import githubicon from './assets/images/github-icon.png'; // Adjust the path based on your folder structure
 
 const Footer: React.FC = () => {

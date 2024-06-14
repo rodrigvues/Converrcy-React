@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavContainer, NavItems, NavItem, Logo, ThemeSwitch, SwitchInput, SwitchLabel, SwitchSlider } from './Navbar';
+import { NavContainer, NavItems, NavItem, Logo, ThemeSwitch, SwitchInput, SwitchLabel, SwitchSlider } from './NavbarStyles';
 import logo from './assets/images/logo.png'; // Adjust the path based on your folder structure
 
 const Navbar: React.FC = () => {

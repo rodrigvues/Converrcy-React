@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, ParagraphText, WholeParagraph } from './Paragraph';
+import { Title, ParagraphText, WholeParagraph } from './ParagraphStyles';
 
 const Paragraph: React.FC = () => {
   return (
