@@ -58,9 +58,7 @@ export const Select = styled.select`
   border-radius: 15px;
   border: 1px solid #E0EEC6;
   color: E0EEC6;
-  font-weight: 700;
-  width: 60px;
-`;
+  font-weight: 700;`;
 
 export const SelectTo = styled.select`
   padding: 10px;
@@ -70,7 +68,6 @@ export const SelectTo = styled.select`
   color: E0EEC6;
   font-weight: 700;
   margin-left: 5px;
-  width: 60px;
 `;
 
 export const ResultButton = styled.div`
