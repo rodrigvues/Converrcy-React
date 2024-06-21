@@ -31,7 +31,7 @@ export const RowResult = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 330px;
+  width: 250px;
   padding: 10px;
   margin: 10px;
   font-size: 1.2rem;
@@ -58,7 +58,9 @@ export const Select = styled.select`
   border-radius: 15px;
   border: 1px solid #E0EEC6;
   color: E0EEC6;
-  font-weight: 700;`;
+  font-weight: 700;
+  width: 100px;
+`;
 
 export const SelectTo = styled.select`
   padding: 10px;
@@ -68,6 +70,7 @@ export const SelectTo = styled.select`
   color: E0EEC6;
   font-weight: 700;
   margin-left: 5px;
+  width: 100px;
 `;
 
 export const ResultButton = styled.div`
