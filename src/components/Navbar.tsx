@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
       <NavItems>
         <NavItem>About</NavItem>
         <NavItem>More Projects</NavItem>
+        <NavItem>Support</NavItem>
         <ThemeSwitch>
           <SwitchInput type="checkbox" id="themeSwitch" />
           <SwitchLabel htmlFor="themeSwitch">
