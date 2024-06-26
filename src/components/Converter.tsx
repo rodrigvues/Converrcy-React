@@ -18,69 +18,67 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 //começo do código
 const Converter: React.FC = () => {
   //states
-  const [amount, setAmount]             = useState<number>(1); // state que armazena e renderiza a quantidade($) ( amount )
-  const [fromCurrency, setFromCurrency] = useState<string>('USD'); // state que fica com a primeira moeda ( usd default )
-  const [toCurrency, setToCurrency]     = useState<string>('EUR'); // state que fica com a segunda moeda (euro default )
-  const [exchangeRate, setExchangeRate] = useState<number | null>(null); // state que armazena o câmbio
-  const [currencies, setCurrencies]     = useState<string[]>([]); // state que armazena as moedas disponíveis
+  const [amount, setAmount] = useState<number>(1); // state que armazena e renderiza a quantidade($) ( amount )
+const [fromCurrency, setFromCurrency] = useState<string>('USD'); // state que fica com a primeira moeda ( usd default )
+const [toCurrency, setToCurrency] = useState<string>('EUR'); // state que fica com a segunda moeda (euro default )
+const [exchangeRate, setExchangeRate] = useState<number | null>(null); // state que armazena o câmbio
+const [currencies, setCurrencies] = useState<string[]>([]); // state que armazena as moedas disponíveis
 
-  // pega a moeda da api uma vez que o componente é montado na dom
-  useEffect(() => {
-    const fetchCurrencies = async () => {
-      try {
-        const response = await axios.get<ExchangeRatesResponse>('https://api.currencyapi.com/v3/latest', {
-          params: { apikey: API_KEY, base_currency: 'USD' },
-        });
-        const data = response.data.data;
-        setCurrencies(Object.keys(data)); // seta as moedas ( currencies )
-      } catch (error) {
-        console.error('Error fetching currencies:', error); // catch error em caso de problema no processo
-      }
-    };
-
-    fetchCurrencies();
-  }, []);
-
-  // pega a nova de taxa de câmbio toda vez que a 1ª ou 2ª moeda muda
-  useEffect(() => {
-    const fetchExchangeRate = async () => {
-      try {
-        const response = await axios.get<ExchangeRatesResponse>('https://api.currencyapi.com/v3/latest', {
-          params: { apikey: API_KEY, base_currency: fromCurrency },
-        });
-        const data = response.data.data;
-        setExchangeRate(data[toCurrency].value); // seta a taxa de câmbio ( exchange rate )
-      } catch (error) {
-        console.error('Error fetching exchange rate:', error);
-      }
-    };
-
-    fetchExchangeRate();
-  }, [fromCurrency, toCurrency]);
-
-  // função para lidar com a mudança da quantidade($)
-  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value); // cria value e iguala ao valor colocado no input
-    // if para não deixar user colocar qntd abaixo de 0
-    if (value >= 0) {
-      setAmount(value); // seta quantidade se for igual ou acima de 0
-    } else {
-      setAmount(0); // seta qntd pra 0 toda vez que for mudada para menos que 0
+useEffect(() => {
+  const fetchCurrencies = async () => {
+    try {
+      const response = await axios.get('https://api.freecurrencyapi.com/v1/latest', {
+        params: { apikey: API_KEY, base_currency: 'USD' },
+      });
+      const data = response.data.data;
+      setCurrencies(Object.keys(data)); // seta as moedas ( currencies )
+    } catch (error) {
+      console.error('Error fetching currencies:', error); // catch error em caso de problema no processo
     }
   };
 
-  // função para lidar com a 1ª moeda ( from currency ), toda vez que que é mudada
-  const handleFromCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFromCurrency(e.target.value);
+  fetchCurrencies();
+}, []);
+
+useEffect(() => {
+  const fetchExchangeRate = async () => {
+    try {
+      const response = await axios.get('https://api.freecurrencyapi.com/v1/latest', {
+        params: { apikey: API_KEY, base_currency: fromCurrency },
+      });
+      const data = response.data.data;
+      if (data && data[toCurrency]) {
+        setExchangeRate(data[toCurrency]); // seta a taxa de câmbio ( exchange rate )
+      } else {
+        setExchangeRate(null);
+      }
+    } catch (error) {
+      console.error('Error fetching exchange rate:', error);
+    }
   };
 
-  // função para lidar com a 2ª moeda ( to currency ), toda vez que que é mudada
-  const handleToCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setToCurrency(e.target.value);
-  };
+  fetchExchangeRate();
+}, [fromCurrency, toCurrency]);
 
-  // converte ( calcula ) a quantidade usando a taxa de câmbio
-  const convert = (amount: number, rate: number | null) => (rate ? (amount * rate).toFixed(2) : '0');
+const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const value = Number(e.target.value); // cria value e iguala ao valor colocado no input
+  if (value >= 0) {
+    setAmount(value); // seta quantidade se for igual ou acima de 0
+  } else {
+    setAmount(0); // seta qntd pra 0 toda vez que for mudada para menos que 0
+  }
+};
+
+const handleFromCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  setFromCurrency(e.target.value);
+};
+
+const handleToCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  setToCurrency(e.target.value);
+};
+
+const convert = (amount: number, rate: number | null) => (rate ? (amount * rate).toFixed(2) : '0');
+
   /*
     if rate !== null ( se a taxa de câmbio não é nula )
     const result = amount * rate / calcula o resultado da conversão
