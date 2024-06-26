@@ -31,7 +31,7 @@ export const RowResult = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 250px;
+  width: 315px;
   padding: 10px;
   margin: 10px;
   font-size: 1.2rem;
@@ -87,7 +87,7 @@ export const ResultButton = styled.div`
   align-items: center; // Center items vertically
   justify-content: center; // Center items horizontally
   height: 77px;
-  width: 445px;
+  width: 510px;
   position: relative; // Ensure the button is positioned relatively
 `;
 
