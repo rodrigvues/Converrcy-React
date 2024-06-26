@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           </FooterColumn>
         </FooterColumns>
         <FooterEnd>
-          <Rights>&copy; 2024 Converrcy, All rights reserved.</Rights>
+          <Rights >&copy; 2024 Converrcy, All rights reserved.</Rights>
           <GitHubIcon href="#">
             <img src={githubicon} alt="GitHub" />
           </GitHubIcon>
