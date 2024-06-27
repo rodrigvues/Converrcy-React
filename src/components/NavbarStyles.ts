@@ -33,6 +33,18 @@ export const NavItem = styled.div`
   }
 `;
 
+export const NavItemLanguage = styled.div`
+  margin: 0 10px;
+  cursor: pointer;
+  color: #E0EEC6;
+  text-decoration: none; // Remove underline
+  font-weight: 700;
+  font-size: 20px;
+  &:hover {
+    text-decoration: none; // Ensure no underline on hover
+  }
+`;
+
 export const ThemeSwitch = styled.div`
   display: flex;
   align-items: center;
