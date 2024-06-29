@@ -63,20 +63,22 @@ const Converter: React.FC = () => {
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value); // cria value e iguala ao valor colocado no input
     const valuenumber = e.target.value;
-    
-    if (value >= 0) {
-      setAmount(value); // seta quantidade se for igual ou acima de 0
-    } else {
+
+    if (value < 0) {
       setAmount(0); // seta qntd pra 0 toda vez que for mudada para menos que 0
+      return;
     }
 
     // Verifica se o valor tem mais de três dígitos
     if (valuenumber.length <= 3) {
-      setAmount(Number(valuenumber));
+      setAmount(value); // seta quantidade se for igual ou acima de 0
     } else {
       // Trunca o valor para os três primeiros dígitos
-      setAmount(Number(valuenumber.substring(0, 3))); }
+      setAmount(Number(valuenumber.substring(0, 3)));
+    }
   };
+
+
 
   const handleFromCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setFromCurrency(e.target.value);
