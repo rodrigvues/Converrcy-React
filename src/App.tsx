@@ -4,7 +4,6 @@ import GlobalStyle from './GlobalStyle';
 import Converter from './components/Converter';
 import Navbar from './components/Navbar';
 import Paragraph from './components/Paragraph';
-import Footer from './components/Footer';
 import About from './pages/about/About';
 import Support from './pages/support/Support';
 
