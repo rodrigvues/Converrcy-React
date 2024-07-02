@@ -13,7 +13,7 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 45px;  // Adjust height as needed
+  height: 45px;  
 `;
 
 export const NavItems = styled.div`

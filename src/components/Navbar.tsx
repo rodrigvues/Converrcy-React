@@ -6,7 +6,9 @@ import logo from './assets/images/logo.png';
 const Navbar: React.FC = () => {
   return (
     <NavContainer>
-      <Logo src={logo} alt="Logo" />
+      <Link to="/">
+        <Logo src={logo} alt="Logo" />
+      </Link>
       <NavItems>
         <NavItem as={Link} to="/about">About</NavItem>
         <NavItem as={Link} to="/support">Support</NavItem>
