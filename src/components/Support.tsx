@@ -1,12 +1,9 @@
-import React from 'react';
-import Navbar from '../../components/Navbar';
-import { SupportContainer, Section, SectionTitle, Paragraph } from './styles';
+import React from 'react'
+import { SupportContainer, Section, SectionTitle, Paragraph } from './SupportStyles';
 
-const SupportPage: React.FC = () => {
+export default function Support() {
   return (
-    <div>
-      <Navbar />
-      <SupportContainer>
+    <SupportContainer>
       <Section>
         <SectionTitle>Support</SectionTitle>
         <Paragraph>
@@ -20,8 +17,5 @@ const SupportPage: React.FC = () => {
         </Paragraph>
       </Section>
     </SupportContainer>
-    </div>
-  );
-};
-
-export default SupportPage;
+  )
+}

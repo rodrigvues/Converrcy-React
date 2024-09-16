@@ -4,8 +4,10 @@ import GlobalStyle from './GlobalStyle';
 import Converter from './components/Converter';
 import Navbar from './components/Navbar';
 import Paragraph from './components/Paragraph';
-import About from './pages/about/About';
-import Support from './pages/support/Support';
+import AboutPage from './pages/about/About';
+import SupportPage from './pages/support/Support';
+import About from './components/About';
+import Support from './components/Support';
 
 const App: React.FC = () => {
   return (
@@ -18,10 +20,12 @@ const App: React.FC = () => {
               <Navbar />
               <Paragraph />
               <Converter />
+              < About />
+              < Support />
             </>
           } />
-          <Route path="/about" element={<About />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/support" element={<SupportPage />} />
         </Routes>
       </div>
     </Router>
