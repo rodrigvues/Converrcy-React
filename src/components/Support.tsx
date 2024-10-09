@@ -1,7 +1,12 @@
 import React from 'react'
 import { SupportContainer, Section, SectionTitle, Paragraph } from './SupportStyles';
 
+interface AboutProps {
+  text: string; // Certifique-se de que a propriedade text está definida
+}
+
 export default function Support() {
+  
   return (
     <SupportContainer>
       <Section>

@@ -1,7 +1,12 @@
 import React from 'react'
 import { AboutContainer, Section, SectionTitle, Paragraph } from './AboutStyles';
 
+interface AboutProps {
+  text: string; // Certifique-se de que a propriedade text está definida
+}
+
 export default function About() {
+  
   return (
     <AboutContainer>
     <Section>
