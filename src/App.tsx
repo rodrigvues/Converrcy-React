@@ -8,6 +8,7 @@ import Support from './components/Support';
 import enTranslations from './locales/en.json';
 import ptTranslations from './locales/pt.json';
 import { Translations } from './types'; // Se você estiver usando o tipo Translations
+import Converter from './components/Converter';
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<string>('en');
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/" element={
             <>
               <Paragraph translations={translations} />
+              <Converter />
               <About  /> 
               <Support  />
             </>
