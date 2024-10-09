@@ -10,8 +10,6 @@ const Navbar: React.FC = () => {
         <Logo src={logo} alt="Logo" />
       </Link>
       <NavItems>
-        <NavItem as={Link} to="/about">About</NavItem>
-        <NavItem as={Link} to="/support">Support</NavItem>
         <NavItemLanguage>EN</NavItemLanguage>
         <ThemeSwitch>
           <SwitchInput type="checkbox" id="themeSwitch" />

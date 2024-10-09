@@ -4,8 +4,6 @@ import GlobalStyle from './GlobalStyle';
 import Converter from './components/Converter';
 import Navbar from './components/Navbar';
 import Paragraph from './components/Paragraph';
-import AboutPage from './pages/about/About';
-import SupportPage from './pages/support/Support';
 import About from './components/About';
 import Support from './components/Support';
 
@@ -24,8 +22,6 @@ const App: React.FC = () => {
               < Support />
             </>
           } />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/support" element={<SupportPage />} />
         </Routes>
       </div>
     </Router>
