@@ -1,18 +1,17 @@
 import React from 'react';
 import { Title, ParagraphText, WholeParagraph } from './ParagraphStyles';
+import { Translations } from '../types'; // Importando o tipo
 
 interface ParagraphProps {
-  text: string; // Tipagem da propriedade text
+  translations: Translations; // Usando o tipo genérico
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({ text }) => { // Desestruturando a propriedade text
+const Paragraph: React.FC<ParagraphProps> = ({ translations }) => {
   return (
     <WholeParagraph>
-      <Title>{text}</Title> {/* Usando a propriedade text corretamente */}
+      <Title>Converrcy</Title>
       <ParagraphText>
-        Easily convert currencies with real-time exchange rates and share <br />
-        your conversions with friends. Whether you’re traveling or managing <br />
-        your finances, stay updated and share your results with Converrcy!
+        {translations.paragraph_text_1}
       </ParagraphText>
     </WholeParagraph>
   );

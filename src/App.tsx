@@ -5,12 +5,9 @@ import Navbar from './components/Navbar';
 import Paragraph from './components/Paragraph';
 import About from './components/About';
 import Support from './components/Support';
-import enTranslations from './locales/en.json'; // Ajuste o caminho se necessário
-import ptTranslations from './locales/pt.json'; // Ajuste o caminho se necessário
-
-interface Translations {
-  title: string; // Altere para title, já que é o único atributo
-}
+import enTranslations from './locales/en.json';
+import ptTranslations from './locales/pt.json';
+import { Translations } from './types'; // Se você estiver usando o tipo Translations
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<string>('en');
@@ -20,13 +17,13 @@ const App: React.FC = () => {
     <Router>
       <div id="App">
         <GlobalStyle />
-        <Navbar setLanguage={setLanguage} />
+        <Navbar language={language} setLanguage={setLanguage} /> {/* Passando a prop language */}
         <Routes>
           <Route path="/" element={
             <>
-              <Paragraph text={translations.title} /> {/* Passando a propriedade title para o Paragraph */}
-              <About  /> {/* Ajuste conforme necessário */}
-              <Support  /> {/* Ajuste conforme necessário */}
+              <Paragraph translations={translations} />
+              <About  /> 
+              <Support  />
             </>
           } />
         </Routes>

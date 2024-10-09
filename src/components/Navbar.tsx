@@ -2,23 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavContainer, NavItems, NavItemLanguage, Logo, ThemeSwitch, SwitchInput, SwitchLabel, SwitchSlider } from './NavbarStyles';
 import logo from './assets/images/logo.png';
-import enTranslations from '../locales/en.json';
-import ptTranslations from '../locales/pt.json';
 
 interface NavbarProps {
-  setLanguage: (lang: string) => void; // Define a tipagem para setLanguage
+  language: string; // Adicionando a prop para saber qual idioma está selecionado
+  setLanguage: (lang: string) => void; 
 }
 
-const Navbar: React.FC<NavbarProps> = ({ setLanguage }) => {
+const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
+  // Função para alternar o idioma
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'pt' : 'en');
+  };
+
   return (
     <NavContainer>
       <Link to="/">
         <Logo src={logo} alt="Logo" />
       </Link>
       <NavItems>
-        {/* Botões para mudar de idioma */}
-        <NavItemLanguage onClick={() => setLanguage('en')}>EN</NavItemLanguage>
-        <NavItemLanguage onClick={() => setLanguage('pt')}>PT</NavItemLanguage>
+        <NavItemLanguage onClick={toggleLanguage}>
+          {language === 'en' ? 'EN' : 'PT'} {/* Exibe "EN" ou "PT" com base no idioma atual */}
+        </NavItemLanguage>
         <ThemeSwitch>
           <SwitchInput type="checkbox" id="themeSwitch" />
           <SwitchLabel htmlFor="themeSwitch">
