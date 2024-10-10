@@ -23,8 +23,8 @@ const App: React.FC = () => {
           <Route path="/" element={
             <>
               <Paragraph translations={translations} />
-              <Converter />
-              <About  /> 
+              <Converter translations={translations} />
+              <About     translations={translations} /> 
               <Support  />
             </>
           } />

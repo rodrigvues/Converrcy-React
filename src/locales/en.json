@@ -1,4 +1,14 @@
 {
-    "paragraph_text_1": "Easily convert currencies with real-time exchange rates and share your conversions with friends. Whether you’re traveling or managing your finances, stay updated and share your results with Converrcy!"
+    "paragraph":{
+        "text_1": "Easily convert currencies with real-time exchange rates and share your conversions with friends. Whether you’re traveling or managing your finances, stay updated and share your results with Converrcy!"
+    },
+    "converter":{
+        "text_1":"is"
+    },
+    "about":{
+        "text_1":"About Converrcy",
+        "text_2":"Converrcy is a React project created by Vitor Rodrigues. It serves as an online currency converter, designed to provide users with real-time exchange rates for up to 32 different currencies. Whether you're traveling, managing your finances, or simply curious about exchange rates, Converrcy offers a reliable and easy-to-use solution.",
+        "text_3":"Features"
+    }
 }
   

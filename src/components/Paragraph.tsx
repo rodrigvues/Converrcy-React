@@ -7,11 +7,12 @@ interface ParagraphProps {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({ translations }) => {
+  const { paragraph } = translations;
   return (
     <WholeParagraph>
       <Title>Converrcy</Title>
       <ParagraphText>
-        {translations.paragraph_text_1}
+        {paragraph.text_1}
       </ParagraphText>
     </WholeParagraph>
   );
