@@ -19,11 +19,11 @@ export default function About({translations}:AboutProps) {
       <Section>
         <SectionTitle>{about.text_3}</SectionTitle>
         <Paragraph>
-          Converrcy currently supports the following features:
+          {about.text_4}
         </Paragraph>
         <Paragraph>
-          - Conversion of up to 32 different currencies.<br />
-          - Real-time exchange rates to ensure accuracy.<br />
+          {about.text_5}<br />
+          {about.text_6}<br />
         </Paragraph>
       </Section>
     </AboutContainer>

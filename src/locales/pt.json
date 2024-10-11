@@ -8,6 +8,15 @@
     "about":{
         "text_1":"Sobre o Converrcy",
         "text_2":"Converrcy é um projeto em React criado por Vitor Rodrigues. Funciona como um conversor de moedas online, feito para oferecer usuários taxas de câmbios atualizadas em tempo real para até 32 diferentes moedas. Esteja você viajando, organizando suas finanças, ou simplesmente curioso sobre as taxas, o Converrcy oferece uma solução confiável e fácil de usar.",
-        "text_3":"Recursos"
+        "text_3":"Recursos",
+        "text_4":"O Converrcy tem os seguintes recursos:",
+        "text_5":"- Conversão de até 32 moedas diferentes.",
+        "text_6":"- Taxas de conversão atualizadas em tempo real para melhor precisão."
+    },
+    "support":{
+        "text_1":"Suporte",
+        "text_2": "Se precisar de ajuda ou tiver alguma dúvida sobre o Converrcy, não hesite em entrar em contato para suporte. Estamos aqui para ajudá-lo com qualquer problema ou pergunta que possa ter.",
+        "text_3": "Para suporte, por favor entre em contato em: ",
+        "text_4": "Nos esforçamos para responder a todas as solicitações de suporte o mais rápido possível e agradecemos a sua paciência."
     }
 }

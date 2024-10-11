@@ -7,7 +7,7 @@ import About from './components/About';
 import Support from './components/Support';
 import enTranslations from './locales/en.json';
 import ptTranslations from './locales/pt.json';
-import { Translations } from './types'; // Se você estiver usando o tipo Translations
+import { Translations } from './types'; 
 import Converter from './components/Converter';
 
 const App: React.FC = () => {
@@ -18,14 +18,14 @@ const App: React.FC = () => {
     <Router>
       <div id="App">
         <GlobalStyle />
-        <Navbar language={language} setLanguage={setLanguage} /> {/* Passando a prop language */}
+        <Navbar language={language} setLanguage={setLanguage} />
         <Routes>
           <Route path="/" element={
             <>
               <Paragraph translations={translations} />
               <Converter translations={translations} />
               <About     translations={translations} /> 
-              <Support  />
+              <Support   translations={translations} />
             </>
           } />
         </Routes>
