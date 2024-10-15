@@ -9,6 +9,7 @@ import enTranslations from './locales/en.json';
 import ptTranslations from './locales/pt.json';
 import { Translations } from './types'; 
 import Converter from './components/Converter';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<string>('en');
@@ -26,6 +27,7 @@ const App: React.FC = () => {
               <Converter translations={translations} />
               <About     translations={translations} /> 
               <Support   translations={translations} />
+              <Footer translations={translations}/>
             </>
           } />
         </Routes>

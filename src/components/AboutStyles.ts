@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const AboutContainer = styled.div`
   margin: 0 auto;
+  padding: 20px;
 `;
 
 export const Section = styled.div`

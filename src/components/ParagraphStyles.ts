@@ -29,4 +29,5 @@ export const WholeParagraph = styled.div`
   align-items: left;  // Ensure content is aligned to the left
   margin-left: 45px;
   margin-right: 45px;
+  padding: 20px;
 `;
