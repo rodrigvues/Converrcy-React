@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, Input, Select, SelectContainer, ResultButton, AddButton, RowInput, RowResult, SelectTo } from './ConverterStyles';
-// usando interface pra armazenar api key que tem os dados da conversão
-// ( mudarei pra arq. env futuramente )
+import { Translations } from '../types';
+
+interface ConverterProps {
+  translations: Translations; // Usando o tipo genérico
+}
+
 interface ExchangeRatesResponse {
   data: {
     [key: string]: {
@@ -16,7 +20,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 
 //começo do código
-const Converter: React.FC = () => {
+const Converter: React.FC<ConverterProps> = ({translations}) => {
+  const { converter } = translations;
   //states
   const [amount, setAmount] = useState<number>(1); // state que armazena e renderiza a quantidade($) ( amount )
   const [fromCurrency, setFromCurrency] = useState<string>('USD'); // state que fica com a primeira moeda ( usd default )
@@ -122,7 +127,7 @@ const Converter: React.FC = () => {
   </RowInput>
   <RowResult>
     <ResultButton>
-      {amount} {fromCurrency} is {convert(amount, exchangeRate)} {toCurrency}
+      {amount} {fromCurrency} {converter.text_1} {convert(amount, exchangeRate)} {toCurrency}
     </ResultButton>
     <AddButton>+</AddButton>
   </RowResult>

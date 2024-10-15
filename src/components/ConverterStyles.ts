@@ -13,6 +13,7 @@ export const Container = styled.div`
   margin-top: 0px;
   margin-left: 45px;
   margin-right: 45px;
+  padding: 20px;
 `;
 
 export const RowInput = styled.div`

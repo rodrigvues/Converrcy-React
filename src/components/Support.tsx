@@ -1,19 +1,25 @@
 import React from 'react'
 import { SupportContainer, Section, SectionTitle, Paragraph } from './SupportStyles';
+import { Translations } from '../types';
 
-export default function Support() {
+interface SupportProps {
+  translations: Translations; // Certifique-se de que a propriedade text está definida
+}
+
+export default function Support({translations}:SupportProps) {
+  const { support } = translations;
   return (
     <SupportContainer>
       <Section>
-        <SectionTitle>Support</SectionTitle>
+        <SectionTitle>{support.text_1}</SectionTitle>
         <Paragraph>
-          If you need any assistance or have any questions about Converrcy, please don't hesitate to contact for support. We are here to help you with any issues or inquiries you may have.
+        {support.text_2}
         </Paragraph>
         <Paragraph>
-          For support, please contact at: <a href="mailto:rodrigvues@gmail.com">rodrigvues@gmail.com</a>
+        {support.text_3}<a href="mailto:rodrigvues@gmail.com">rodrigvues@gmail.com</a>
         </Paragraph>
         <Paragraph>
-          We strive to respond to all support requests as quickly as possible and appreciate your patience.
+        {support.text_4}
         </Paragraph>
       </Section>
     </SupportContainer>

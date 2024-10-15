@@ -22,9 +22,13 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px; /* Add padding to create some space around the content */
     box-sizing: border-box; /* Ensure padding doesn't affect the width/height calculation */
   }
 `;
 
 export default GlobalStyle;
+
+/*
+#root {
+    padding: 20px; 
+  }*/

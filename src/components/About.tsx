@@ -1,23 +1,29 @@
 import React from 'react'
 import { AboutContainer, Section, SectionTitle, Paragraph } from './AboutStyles';
+import { Translations } from '../types';
 
-export default function About() {
+interface AboutProps {
+  translations: Translations; // Certifique-se de que a propriedade text está definida
+}
+
+export default function About({translations}:AboutProps) {
+  const { about } = translations;
   return (
     <AboutContainer>
     <Section>
-        <SectionTitle>About Converrcy</SectionTitle>
+        <SectionTitle>{about.text_1}</SectionTitle>
         <Paragraph>
-          Converrcy is a React project created by Vitor Rodrigues. It serves as an online currency converter, designed to provide users with real-time exchange rates for up to 32 different currencies. Whether you're traveling, managing your finances, or simply curious about exchange rates, Converrcy offers a reliable and easy-to-use solution.
+          {about.text_2}
         </Paragraph>
       </Section>
       <Section>
-        <SectionTitle>Features</SectionTitle>
+        <SectionTitle>{about.text_3}</SectionTitle>
         <Paragraph>
-          Converrcy currently supports the following features:
+          {about.text_4}
         </Paragraph>
         <Paragraph>
-          - Conversion of up to 32 different currencies.<br />
-          - Real-time exchange rates to ensure accuracy.<br />
+          {about.text_5}<br />
+          {about.text_6}<br />
         </Paragraph>
       </Section>
     </AboutContainer>

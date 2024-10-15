@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 
 const rootElement = document.getElementById('root');
 const footerRootElement = document.getElementById('footer-root');
+
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
@@ -19,7 +20,7 @@ if (rootElement) {
 } else {
   console.error('Failed to find the root element.');
 }
-
+/*
 if (footerRootElement !== null) {
   const footerRoot = ReactDOM.createRoot(footerRootElement);
   footerRoot.render(
@@ -33,3 +34,4 @@ if (footerRootElement !== null) {
 }
 
 reportWebVitals();
+*/

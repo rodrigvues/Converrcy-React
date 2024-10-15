@@ -10,6 +10,7 @@ export const NavContainer = styled.div`
   margin-bottom: 10px;
   background-color: #04471C;
   color: #E0EEC6;
+  padding: 20px;
 `;
 
 export const Logo = styled.img`
