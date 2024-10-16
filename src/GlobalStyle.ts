@@ -1,13 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  isDarkTheme: boolean;
+}
+
+const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #04471C;
-    color: #E0EEC6;
+    background-color: ${({ isDarkTheme }) => (isDarkTheme ? '#E0EEC6' : '#04471C')}; /* Alterna as cores */
+    color: ${({ isDarkTheme }) => (isDarkTheme ? '#04471C' : '#E0EEC6')}; /* Alterna as cores */
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -15,20 +19,15 @@ const GlobalStyle = createGlobalStyle`
 
   body::-webkit-scrollbar {
     display: none;
-}
+  }
 
   #root {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box; /* Ensure padding doesn't affect the width/height calculation */
+    box-sizing: border-box;
   }
 `;
 
 export default GlobalStyle;
-
-/*
-#root {
-    padding: 20px; 
-  }*/

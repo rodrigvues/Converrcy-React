@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 //import './index.css';
-import GlobalStyle from './GlobalStyle';
-import App from './App';
+import App from './App'; // Remova o GlobalStyle daqui
 import reportWebVitals from './reportWebVitals';
 import Footer from './components/Footer';
 
@@ -13,8 +12,7 @@ if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
-      <GlobalStyle />
-      <App />
+      <App /> {/* GlobalStyle está sendo aplicado dentro de App.tsx */}
     </React.StrictMode>
   );
 } else {
@@ -25,7 +23,6 @@ if (footerRootElement !== null) {
   const footerRoot = ReactDOM.createRoot(footerRootElement);
   footerRoot.render(
     <React.StrictMode>
-      <GlobalStyle />
       <Footer />
     </React.StrictMode>
   );
@@ -33,5 +30,4 @@ if (footerRootElement !== null) {
   console.error('Failed to find the footer root element.');
 }
 
-reportWebVitals();
-*/
+reportWebVitals();*/

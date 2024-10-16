@@ -13,13 +13,19 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<string>('en');
+  const [isDarkTheme, setIsDarkTheme] = useState(false); // Estado para o tema
   const translations: Translations = language === 'en' ? enTranslations : ptTranslations;
+
+  // Função para alternar o tema
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
 
   return (
     <Router>
       <div id="App">
-        <GlobalStyle />
-        <Navbar language={language} setLanguage={setLanguage} />
+        <GlobalStyle isDarkTheme={isDarkTheme} /> {/* Passando o tema para o GlobalStyle */}
+        <Navbar language={language} setLanguage={setLanguage} toggleTheme={toggleTheme} /> {/* Passando a função toggleTheme */}
         <Routes>
           <Route path="/" element={
             <>
@@ -27,7 +33,7 @@ const App: React.FC = () => {
               <Converter translations={translations} />
               <About     translations={translations} /> 
               <Support   translations={translations} />
-              <Footer translations={translations}/>
+              <Footer    translations={translations} />
             </>
           } />
         </Routes>
