@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: ${({ isDarkTheme }) => (isDarkTheme ? '#E0EEC6' : '#04471C')}; /* Alterna as cores */
+    background-color: ${({ isDarkTheme }) => (isDarkTheme ? '#C2A83E' : '#04471C')}; /* Alterna as cores */
     color: ${({ isDarkTheme }) => (isDarkTheme ? '#04471C' : '#E0EEC6')}; /* Alterna as cores */
     display: flex;
     flex-direction: column;

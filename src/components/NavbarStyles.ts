@@ -14,7 +14,7 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 45px;  
+  height: 45px;
 `;
 
 export const NavItems = styled.div`
@@ -26,11 +26,11 @@ export const NavItem = styled.div`
   margin: 0 10px;
   cursor: pointer;
   color: #E0EEC6;
-  text-decoration: none; // Remove underline
+  text-decoration: none;
   font-weight: 500;
   font-size: 20px;
   &:hover {
-    text-decoration: none; // Ensure no underline on hover
+    text-decoration: none;
   }
 `;
 
@@ -38,11 +38,11 @@ export const NavItemLanguage = styled.div`
   margin: 0 10px;
   cursor: pointer;
   color: #E0EEC6;
-  text-decoration: none; // Remove underline
+  text-decoration: none;
   font-weight: 700;
   font-size: 20px;
   &:hover {
-    text-decoration: none; // Ensure no underline on hover
+    text-decoration: none;
   }
 `;
 
@@ -87,12 +87,14 @@ export const SwitchSlider = styled.span`
     transition: 0.4s;
     border-radius: 50%;
   }
+`;
 
-  ${SwitchInput}:checked + & {
-    background-color: #2196F3;
+export const SwitchSliderChecked = styled(SwitchSlider)`
+  ${SwitchInput}:checked + ${SwitchLabel} & {
+    background-color: #7CA982;
   }
 
-  ${SwitchInput}:checked + &:before {
+  ${SwitchInput}:checked + ${SwitchLabel} &::before {
     transform: translateX(20px);
   }
 `;

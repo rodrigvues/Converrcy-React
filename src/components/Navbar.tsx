@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NavContainer, NavItems, NavItemLanguage, Logo, ThemeSwitch, SwitchInput, SwitchLabel, SwitchSlider } from './NavbarStyles';
+import { NavContainer, NavItems, NavItemLanguage, Logo, ThemeSwitch, SwitchInput, SwitchLabel, SwitchSliderChecked } from './NavbarStyles';
 import logo from './assets/images/logo.png';
 
 interface NavbarProps {
   language: string;
   setLanguage: (lang: string) => void;
-  toggleTheme: () => void; // Adicionando a prop para alternar o tema
+  toggleTheme: () => void;  // Agora a prop toggleTheme é aceita
 }
 
 const Navbar: React.FC<NavbarProps> = ({ language, setLanguage, toggleTheme }) => {
-  // Função para alternar o idioma
+  // Toggle language function
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'pt' : 'en');
   };
@@ -25,9 +25,9 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage, toggleTheme }) =
           {language === 'en' ? 'EN' : 'PT'}
         </NavItemLanguage>
         <ThemeSwitch>
-          <SwitchInput type="checkbox" id="themeSwitch" onChange={toggleTheme} /> {/* Chamando toggleTheme ao clicar */}
+          <SwitchInput type="checkbox" id="themeSwitch" onChange={toggleTheme} />
           <SwitchLabel htmlFor="themeSwitch">
-            <SwitchSlider />
+            <SwitchSliderChecked />
           </SwitchLabel>
         </ThemeSwitch>
       </NavItems>
