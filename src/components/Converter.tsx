@@ -129,7 +129,7 @@ const Converter: React.FC<ConverterProps> = ({translations}) => {
     <ResultButton>
       {amount} {fromCurrency} {converter.text_1} {convert(amount, exchangeRate)} {toCurrency}
     </ResultButton>
-    <AddButton>+</AddButton>
+    
   </RowResult>
   </Container>
   );
@@ -137,3 +137,5 @@ const Converter: React.FC<ConverterProps> = ({translations}) => {
 
 
 export default Converter;
+
+// <AddButton>+</AddButton>

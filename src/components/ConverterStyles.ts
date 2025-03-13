@@ -7,51 +7,80 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; // Align content to the left
+  align-items: flex-start;
   width: 100%;
-  max-width: 600px; // Ensure it doesn't stretch too wide
+  max-width: 600px;
   margin-top: 0px;
   margin-left: 45px;
   margin-right: 45px;
   padding: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px;
+  }
 `;
 
 export const RowInput = styled.div`
   display: flex;
-  align-items: left;
-  justify-content: left;
-  margin-top: 10px;
+  align-items: center; /* Mantém tudo alinhado na mesma linha */
+  justify-content: flex-start; /* Alinha os itens à esquerda */
+  gap: 10px; /* Adiciona um espaçamento entre os elementos */
+  flex-wrap: nowrap; /* Impede que os selects quebrem para baixo */
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap; /* Permite quebrar para telas pequenas */
+  }
 `;
+
+
 
 export const RowResult = styled.div`
   display: flex;
-  align-items: flex-start; // Align items to the start of the container
-  justify-content: left;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 10px;
-  position: relative; // Ensure the container is positioned relatively
+  position: relative;
+  width: auto; /* Instead of 100% */
+  max-width: 600px; /* Prevent it from growing too much */
+  overflow: visible; /* Allow elements to be seen */
 `;
 
 export const Input = styled.input`
-  width: 315px;
+  flex: 1; /* Faz com que o input ocupe o máximo possível sem quebrar a linha */
+  min-width: 200px; /* Mantém um tamanho mínimo */
+  max-width: 315px; /* Garante que não cresça demais */
   padding: 10px;
-  margin: 10px;
   font-size: 1.2rem;
   border-radius: 30px;
   border: 1px solid #ddd;
   font-weight: 500;
-  height: 30px;
-  margin-right: 5px;
-  margin-left: 0px;
-  margin-bottom: 0px;
+  height: 55px;
+  box-sizing: border-box; /* Mantém o padding dentro do tamanho total */
+
+  @media (max-width: 768px) {
+    min-width: 150px;
+  }
 `;
+
+
+
 
 export const SelectContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 10px;
-  margin-left: 0px;
-  margin-bottom: 0px;
+  flex-shrink: 0; /* Impede que encolham */
+  gap: 5px; /* Espaçamento entre os selects */
+  height: 55px;
 `;
+
 
 export const Select = styled.select`
   padding: 10px;
@@ -61,6 +90,16 @@ export const Select = styled.select`
   color: E0EEC6;
   font-weight: 700;
   width: 100px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    width: 90px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    width: 80px;
+  }
 `;
 
 export const SelectTo = styled.select`
@@ -72,6 +111,16 @@ export const SelectTo = styled.select`
   font-weight: 700;
   margin-left: 5px;
   width: 100px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    width: 90px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    width: 80px;
+  }
 `;
 
 export const ResultButton = styled.div`
@@ -83,20 +132,31 @@ export const ResultButton = styled.div`
   font-size: 40px;
   cursor: default;
   font-weight: 800;
-  text-align: center; // Center text horizontally
-  display: flex; // Use Flexbox
-  align-items: center; // Center items vertically
-  justify-content: center; // Center items horizontally
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 77px;
   width: 510px;
-  position: relative; // Ensure the button is positioned relatively
+  position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    width: 400px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 export const AddButton = styled.button`
   background-color: #7CA982;
   color: white;
   padding: 10px;
-  margin-left: 10px; // Add left margin for spacing
+  margin-left: 10px;
   border: none;
   border-radius: 13px;
   font-size: 2rem;
@@ -106,8 +166,20 @@ export const AddButton = styled.button`
   align-items: center;
   font-weight: 700;
   height: 40px;
-  position: absolute; // Position the button absolutely
-  bottom: 21px; // Align to the bottom of the container
-  right: -45px; // Align to the right of the container
-  transform: translateY(50%); // Adjust the vertical position
+  position: relative; /* Change from absolute to relative */
+  margin-top: 10px; /* Instead of transform */
+  right: 0; /* Reset right positioning */
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    height: 35px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    height: 30px;
+  }
 `;
+
+

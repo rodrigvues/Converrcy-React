@@ -16,7 +16,12 @@ export default function About({translations}:AboutProps) {
           {about.text_2}
         </Paragraph>
       </Section>
-      <Section>
+    </AboutContainer>
+  )
+}
+
+/*
+<Section>
         <SectionTitle>{about.text_3}</SectionTitle>
         <Paragraph>
           {about.text_4}
@@ -25,7 +30,4 @@ export default function About({translations}:AboutProps) {
           {about.text_5}<br />
           {about.text_6}<br />
         </Paragraph>
-      </Section>
-    </AboutContainer>
-  )
-}
+      </Section> */
